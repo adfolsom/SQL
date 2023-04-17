@@ -1,0 +1,39 @@
+--Create a Cookie Store Database
+
+CREATE table Cookies (id INTEGER PRIMARY KEY, Flavor text, Price real, Quantity integer, Calories integer);
+
+INSERT INTO cookies VALUES
+(1, "chocolate chip", 1.25, 1, 225),
+(2, "sugar", 1.00, 1, 160),
+(3, "peanutbutter", 1.25, 1, 190),
+(4, "oatmeal raisin", 1.25, 1, 200),
+(5, "macadamia nut", 1.50, 1, 225),
+(6, "double chocolate chip", 1.50, 1, 240),
+(7, "chocolate chip", 7.25, 6, 1350),
+(8, "sugar", 5.75, 6, 960),
+(9, "peanutbutter", 7.25, 6, 1140),
+(10, "oatmeal raisin", 7.25, 6, 1200),
+(11, "macadamia nut", 8.75, 6, 1350),
+(12, "double chocolate chip", 8.75, 6, 1440),
+(13, "chocolate chip", 14.25, 12, 2700),
+(14, "sugar", 11.25, 12, 1920),
+(15, "peanutbutter", 14.25, 12, 2280),
+(16, "oatmeal raisin", 14.25, 12, 2400),
+(17, "macadamia nut", 17.25, 12, 2700),
+(18, "double chocolate chip", 17.25, 12, 2880)
+;
+
+--Display the database ordered by price.
+SELECT * FROM Cookies ORDER BY price;
+
+--Display the database ordered by flavor.
+SELECT * FROM Cookies ORDER BY Flavor;
+
+--What is the minimum price of cookies grouped by quantity?
+SELECT MIN(Price) FROM Cookies GROUP BY Quantity;
+
+--What is the maximum price of cookies grouped by quantity?
+SELECT MAX(Price) FROM Cookies GROUP BY Quantity;
+
+--What is the average calories in a single cookie?
+SELECT AVG(Calories) FROM Cookies WHERE Quantity < 2;
